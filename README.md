@@ -1,1 +1,311 @@
-# Portfolio
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devraj Kumar | Founder & Execution-First EdTech Builder</title>
+
+<style>
+:root{
+  --bg:#0b0f19;
+  --card:#111827;
+  --accent:#22c55e;
+  --text:#f9fafb;
+  --muted:#9ca3af;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* Layout */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:60px 20px;
+}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap:40px;
+  align-items:center;
+}
+
+.hero h1{
+  font-size:52px;
+  font-weight:800;
+  line-height:1.1;
+}
+
+.hero h1 span{
+  color:var(--accent);
+}
+
+.hero p{
+  margin-top:20px;
+  font-size:18px;
+  color:var(--muted);
+  max-width:600px;
+}
+
+.hero-actions{
+  margin-top:30px;
+  display:flex;
+  gap:15px;
+}
+
+.btn{
+  padding:14px 22px;
+  border-radius:8px;
+  font-weight:600;
+  text-decoration:none;
+  display:inline-block;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:#022c22;
+}
+
+.btn-outline{
+  border:1px solid var(--accent);
+  color:var(--accent);
+}
+
+/* PHOTO PLACEHOLDER */
+.photo-box{
+  width:100%;
+  height:360px;
+  border:2px dashed #1f2937;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  font-size:14px;
+  text-align:center;
+}
+
+/* SECTIONS */
+section{
+  margin-top:80px;
+}
+
+.section-title{
+  font-size:34px;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+.card{
+  background:var(--card);
+  padding:30px;
+  border-radius:16px;
+  border:1px solid #1f2937;
+}
+
+/* EXPERIENCE */
+.exp-item{
+  margin-bottom:30px;
+}
+
+.exp-item h3{
+  font-size:22px;
+}
+
+.exp-item span{
+  color:var(--accent);
+  font-size:14px;
+}
+
+.exp-item p{
+  color:var(--muted);
+  margin-top:10px;
+}
+
+/* SKILLS */
+.skills{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.skill{
+  padding:10px 16px;
+  border-radius:999px;
+  background:#020617;
+  border:1px solid #1f2937;
+  font-size:14px;
+}
+
+/* FOUNDER THESIS */
+.thesis{
+  font-size:20px;
+  font-weight:600;
+  color:#e5e7eb;
+  border-left:4px solid var(--accent);
+  padding-left:20px;
+}
+
+/* FOOTER */
+.footer{
+  margin-top:100px;
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+  .hero h1{
+    font-size:40px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div>
+      <h1>
+        Devraj Kumar<br>
+        <span>Founder & Execution-First EdTech Builder</span>
+      </h1>
+
+      <p>
+        Early-stage EdTech founder with ground-level education execution experience.
+        Built systems, programs, and learning initiatives for 500+ students —
+        focused on solving real education problems before scaling solutions.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#" class="btn btn-primary">Download Portfolio (PDF)</a>
+        <a href="mailto:devrajkumar.contact@gmail.com" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+
+    <!-- PHOTO SPACE -->
+    <div class="photo-box">
+      Your Professional Photo<br>
+      (Optional – square / portrait works best)
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section>
+    <h2 class="section-title">About Me</h2>
+    <div class="card">
+      <p>
+        I’m the founder of <strong>AcademeForge</strong>, an early-stage EdTech initiative
+        focused on rebuilding education from the ground up — starting where systems fail most: the student.
+      </p>
+      <br>
+      <p>
+        Over the last year, I worked hands-on with 500+ students through quizzes,
+        academic initiatives, and on-ground programs. My teaching experience in rural
+        schools gave me operational insight into low-resource education environments,
+        shaping how I think about product design, scalability, and real impact.
+      </p>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <h2 class="section-title">Experience</h2>
+
+    <div class="card exp-item">
+      <h3>Founder & CEO — AcademeForge</h3>
+      <span>Jan 2024 – Present | Patna, Bihar</span>
+      <p>
+        Leading an early-stage EdTech rebuild with a systems-first mindset.
+        Designing learning structures, brand identity, web presence, and execution models
+        grounded in real student behavior and school-level constraints.
+      </p>
+    </div>
+
+    <div class="card exp-item">
+      <h3>Teacher (Internship) — Rural School</h3>
+      <span>Feb 2025 – Jul 2025</span>
+      <p>
+        Taught and worked directly with students in low-resource environments.
+        Gained firsthand insight into classroom realities, attention gaps,
+        infrastructure limits, and implementation challenges.
+      </p>
+    </div>
+
+    <div class="card exp-item">
+      <h3>Content Creator — YouTube</h3>
+      <span>Dec 2019 – Present</span>
+      <p>
+        Built and managed a mixed-audience YouTube community across comedy,
+        gaming, vlogs, and storytelling. Developed strong understanding of
+        audience psychology, distribution, and communication — now applied
+        to founder storytelling and growth strategy.
+      </p>
+    </div>
+  </section>
+
+  <!-- PROJECT -->
+  <section>
+    <h2 class="section-title">Key Project</h2>
+    <div class="card">
+      <h3>AcademeForge Website & Learning System</h3>
+      <p>
+        Designed and built the early-stage web presence and learning structure for AcademeForge.
+        Focused on clarity, trust, and long-term scalability rather than surface-level EdTech features.
+      </p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <h2 class="section-title">Skills</h2>
+    <div class="card skills">
+      <div class="skill">Execution-First EdTech Strategy</div>
+      <div class="skill">Learning Systems Design</div>
+      <div class="skill">Early-Stage Web Building</div>
+      <div class="skill">Brand & Visual Design</div>
+      <div class="skill">Founder-Led Storytelling</div>
+      <div class="skill">On-Ground Education Operations</div>
+      <div class="skill">Audience Psychology</div>
+      <div class="skill">Product Thinking</div>
+    </div>
+  </section>
+
+  <!-- THESIS -->
+  <section>
+    <h2 class="section-title">Founder Thesis</h2>
+    <div class="card thesis">
+      Education won’t be fixed by surface-level EdTech or pitch decks.
+      It will be rebuilt by founders who deeply understand students,
+      systems, and scale — through firsthand execution.
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    📧 devrajkumar.contact@gmail.com <br>
+    Open to internships, full-time roles, early-stage teams, and founder-led companies
+  </div>
+
+</div>
+
+</body>
+</html>
