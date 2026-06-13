@@ -202,7 +202,7 @@
         }
 
         .navbar.sticky {
-            background: rgba(var(--bg-primary-dark-rgb, 18, 18, 18), 0.8); /* Fallback for dark */
+            background: rgba(18, 18, 18, 0.8); /* Fallback for dark */
             backdrop-filter: blur(15px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
@@ -416,14 +416,14 @@
             border-radius: 50%;
             object-fit: cover;
             border: 5px solid var(--accent-color);
-            box-shadow: 0 0 0 8px rgba(var(--accent-color-rgb, 0, 188, 212), 0.3);
+            box-shadow: 0 0 0 8px rgba(0, 188, 212, 0.3);
             margin-bottom: 30px;
             animation: pulse 2s infinite alternate;
         }
 
         @keyframes pulse {
-            from { transform: scale(1); box-shadow: 0 0 0 8px rgba(var(--accent-color-rgb, 0, 188, 212), 0.3); }
-            to { transform: scale(1.03); box-shadow: 0 0 0 12px rgba(var(--accent-color-rgb, 0, 188, 212), 0.5); }
+            from { transform: scale(1); box-shadow: 0 0 0 8px rgba(0, 188, 212, 0.3); }
+            to { transform: scale(1.03); box-shadow: 0 0 0 12px rgba(0, 188, 212, 0.5); }
         }
 
         .social-links {
@@ -468,13 +468,13 @@
         }
         .particle {
             position: absolute;
-            background: rgba(var(--accent-color-rgb, 0, 188, 212), 0.3); /* Default accent color */
+            background: rgba(0, 188, 212, 0.3); /* Default accent color */
             border-radius: 50%;
             animation: float 15s infinite ease-in-out alternate;
             opacity: 0; /* Hidden by default, JS will show them */
         }
         .light-mode .particle {
-            background: rgba(var(--accent-color-light-rgb, 0, 123, 255), 0.2);
+            background: rgba(0, 123, 255, 0.2);
         }
 
         @keyframes float {
@@ -597,7 +597,9 @@
             width: 0%; /* Initial width for animation */
             transition: width 1.5s ease-out;
         }
-        .skill-item.animate .skill-progress {
+        
+        /* Direct trigger class since animation triggers are not active */
+        .skill-item .skill-progress {
             width: var(--skill-level);
         }
 
@@ -681,13 +683,9 @@
             padding: 10px 40px;
             position: relative;
             width: 50%;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .timeline-item.animate {
-            opacity: 1;
+            opacity: 1; /* Keeping visible without custom scroll JS libraries */
             transform: translateY(0);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
         .timeline-item::after {
@@ -990,7 +988,7 @@
         .contact-form textarea:focus {
             outline: none;
             border-color: var(--accent-color);
-            box-shadow: 0 0 0 3px rgba(var(--accent-color-rgb, 0, 188, 212), 0.3);
+            box-shadow: 0 0 0 3px rgba(0, 188, 212, 0.3);
         }
 
         .contact-form textarea {
@@ -1072,22 +1070,9 @@
         }
 
         /*
-         * Scroll Animations (General)
+         * Fallback Visibility overrides for layouts without active scroll visibility JS libraries
          */
         .animated-section-content > * {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-
-        .animated-section-content > *:nth-child(2) { transition-delay: 0.1s; }
-        .animated-section-content > *:nth-child(3) { transition-delay: 0.2s; }
-        .animated-section-content > *:nth-child(4) { transition-delay: 0.3s; }
-        .animated-section-content > *:nth-child(5) { transition-delay: 0.4s; }
-        .animated-section-content > *:nth-child(6) { transition-delay: 0.5s; }
-        .animated-section-content > *:nth-child(7) { transition-delay: 0.6s; }
-
-        .animated-section-content.animate > * {
             opacity: 1;
             transform: translateY(0);
         }
@@ -1276,7 +1261,7 @@
             <div class="hero-content animated-section-content">
                 <img src="https://via.placeholder.com/200/00bcd4/ffffff?text=DK" alt="Devraj Kumar" class="hero-image">
                 <h1>Hi, I'm Devraj Kumar</h1>
-                <p>A passionate <span class="typed-text" data-typed-items="Software Engineer,Web Developer,Full-Stack Developer,Tech Enthusiast"></span></p>
+                <p>A passionate <span class="typed-text">Software Engineer & Full-Stack Developer</span></p>
                 <a href="#contact" class="btn">Let's Connect</a>
                 <div class="social-links">
                     <a href="#" aria-label="LinkedIn">
@@ -1303,7 +1288,7 @@
                     <p>I am a passionate and results-driven Software Engineer with a strong foundation in full-stack development. My expertise lies in crafting robust and scalable web applications, leveraging modern technologies to deliver exceptional user experiences.</p>
                     <p>With a keen eye for detail and a commitment to continuous learning, I thrive in dynamic environments where I can tackle complex challenges and contribute to innovative solutions. I believe in writing clean, efficient, and maintainable code.</p>
                     <p>Outside of coding, I enjoy exploring new tech trends, contributing to open-source projects, and mentoring aspiring developers. Let's build something amazing together!</p>
-                    <a href="Devraj_Kumar_Resume.pdf" class="btn" download>Download Resume</a>
+                    <a href="#" class="btn">Download Resume</a>
                 </div>
             </div>
         </section>
@@ -1313,19 +1298,19 @@
             <div class="container animated-section-content">
                 <div class="skill-category glass-card">
                     <h3>Frontend Development</h3>
-                    <div class="skill-item" data-skill-level="90%">
+                    <div class="skill-item" style="--skill-level: 90%;">
                         <div class="skill-info"><span>HTML & CSS</span><span>90%</span></div>
                         <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
-                    <div class="skill-item" data-skill-level="85%">
+                    <div class="skill-item" style="--skill-level: 85%;">
                         <div class="skill-info"><span>JavaScript (ES6+)</span><span>85%</span></div>
                         <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
-                    <div class="skill-item" data-skill-level="80%">
+                    <div class="skill-item" style="--skill-level: 80%;">
                         <div class="skill-info"><span>React.js</span><span>80%</span></div>
                         <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
-                    <div class="skill-item" data-skill-level="75%">
+                    <div class="skill-item" style="--skill-level: 75%;">
                         <div class="skill-info"><span>Vue.js</span><span>75%</span></div>
                         <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
@@ -1333,19 +1318,19 @@
 
                 <div class="skill-category glass-card">
                     <h3>Backend Development</h3>
-                    <div class="skill-item" data-skill-level="88%">
+                    <div class="skill-item" style="--skill-level: 88%;">
                         <div class="skill-info"><span>Node.js & Express.js</span><span>88%</span></div>
                         <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
-                    <div class="skill-item" data-skill-level="82%">
+                    <div class="skill-item" style="--skill-level: 82%;">
                         <div class="skill-info"><span>Python & Django/Flask</span><span>82%</span></div>
                         <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
-                    <div class="skill-item" data-skill-level="78%">
+                    <div class="skill-item" style="--skill-level: 78%;">
                         <div class="skill-info"><span>RESTful APIs</span><span>78%</span></div>
                         <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
-                    <div class="skill-item" data-skill-level="70%">
+                    <div class="skill-item" style="--skill-level: 70%;">
                         <div class="skill-info"><span>GraphQL</span><span>70%</span></div>
                         <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
@@ -1353,19 +1338,19 @@
 
                 <div class="skill-category glass-card">
                     <h3>Databases & Tools</h3>
-                    <div class="skill-item" data-skill-level="85%">
+                    <div class="skill-item" style="--skill-level: 85%;">
                         <div class="skill-info"><span>MongoDB</span><span>85%</span></div>
                         <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
-                    <div class="skill-item" data-skill-level="80%">
+                    <div class="skill-item" style="--skill-level: 80%;">
                         <div class="skill-info"><span>PostgreSQL</span><span>80%</span></div>
                         <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
-                    <div class="skill-item" data-skill-level="90%">
+                    <div class="skill-item" style="--skill-level: 90%;">
                         <div class="skill-info"><span>Git & GitHub</span><span>90%</span></div>
                         <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
-                    <div class="skill-item" data-skill-level="75%">
+                    <div class="skill-item" style="--skill-level: 75%;">
                         <div class="skill-info"><span>Docker</span><span>75%</span></div>
                         <div class="skill-bar"><div class="skill-progress"></div></div>
                     </div>
@@ -1470,19 +1455,23 @@
             <h2>My Achievements</h2>
             <div class="container animated-section-content">
                 <div class="achievement-card glass-card">
-                    <span class="icon">&#9733;</span> <div class="counter" data-target="10">0</div>
+                    <span class="icon">&#9733;</span>
+                    <div class="counter">10</div>
                     <p>Years of Experience</p>
                 </div>
                 <div class="achievement-card glass-card">
-                    <span class="icon">&#128187;</span> <div class="counter" data-target="25">0</div>
+                    <span class="icon">&#128187;</span>
+                    <div class="counter">25</div>
                     <p>Projects Completed</p>
                 </div>
                 <div class="achievement-card glass-card">
-                    <span class="icon">&#127891;</span> <div class="counter" data-target="5">0</div>
+                    <span class="icon">&#127891;</span>
+                    <div class="counter">5</div>
                     <p>Certifications</p>
                 </div>
                 <div class="achievement-card glass-card">
-                    <span class="icon">&#128100;</span> <div class="counter" data-target="15">0</div>
+                    <span class="icon">&#128100;</span>
+                    <div class="counter">15</div>
                     <p>Happy Clients</p>
                 </div>
             </div>
@@ -1532,11 +1521,11 @@
                     <div class="blog-info">
                         <span class="date">June 13, 2026</span>
                         <h3>The Future of Frontend Development</h3>
-                        <p>Explore upcoming architectural patterns, advancements in native Web Components, and how modern frameworks are optimizing compilation speeds.</p>
-                        <a href="#" class="read-more">Read More &rarr;</a>
+                        <p>A closer look at coming shifts in framework runtimes, optimization tricks, and micro-frontend structures.</p>
+                        <a href="#" class="read-more">Read More</a>
                     </div>
-                </div> 
-            </div> 
+                </div>
+            </div>
         </section>
 
         <section id="contact">
@@ -1544,27 +1533,27 @@
             <div class="container animated-section-content">
                 <div class="contact-info">
                     <div class="contact-info-item">
-                        <span class="icon">&#128231;</span>
+                        <span class="icon">&#9993;</span>
                         <p>devraj.kumar@example.com</p>
                     </div>
                     <div class="contact-info-item">
                         <span class="icon">&#128222;</span>
-                        <p>+1 (555) 123-4567</p>
+                        <p>+91 98765 43210</p>
                     </div>
                 </div>
                 <div class="contact-form glass-card">
                     <form action="#" method="POST">
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
+                            <input type="text" id="name" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
-                            <textarea id="message" name="message" required></textarea>
+                            <textarea id="message" required></textarea>
                         </div>
                         <button type="submit" class="btn">Send Message</button>
                     </form>
@@ -1573,8 +1562,67 @@
         </section>
     </main>
 
+    <button id="back-to-top" aria-label="Back to top">&#8593;</button>
+
     <footer class="footer">
         <p>&copy; 2026 Devraj Kumar. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // Navbar structural scroll behaviors
+        window.addEventListener('scroll', function() {
+            var navbar = document.getElementById('navbar');
+            var btt = document.getElementById('back-to-top');
+            if (window.scrollY > 50) {
+                navbar.classList.add('sticky');
+            } else {
+                navbar.classList.remove('sticky');
+            }
+            if (window.scrollY > 300) {
+                btt.classList.add('show');
+            } else {
+                btt.classList.remove('show');
+            }
+        });
+
+        // Scroll to top operational handler
+        document.getElementById('back-to-top').addEventListener('click', function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        });
+
+        // Theme switcher toggles
+        const toggleSwitch = document.getElementById('checkbox');
+        const mobileToggleSwitch = document.getElementById('mobile-checkbox');
+        
+        function switchTheme(e) {
+            if (e.target.checked) {
+                document.body.classList.add('light-mode');
+                toggleSwitch.checked = true;
+                mobileToggleSwitch.checked = true;
+            } else {
+                document.body.classList.remove('light-mode');
+                toggleSwitch.checked = false;
+                mobileToggleSwitch.checked = false;
+            }
+        }
+        toggleSwitch.addEventListener('change', switchTheme, false);
+        mobileToggleSwitch.addEventListener('change', switchTheme, false);
+
+        // Mobile drawer menu interactions
+        const menuToggle = document.getElementById('mobile-menu');
+        const mobileNav = document.getElementById('mobile-nav');
+        menuToggle.addEventListener('click', function() {
+            menuToggle.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+        });
+        
+        // Auto close navigation on anchor item select
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('open');
+                mobileNav.classList.remove('open');
+            });
+        });
+    </script>
 </body>
 </html>
